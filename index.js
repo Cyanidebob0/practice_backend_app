@@ -15,8 +15,19 @@ app.get("/", (req, res) => {
   })
 });
 
+app.get("/edit/:filename",(req,res)=>{
+    res.render("edit",{filename:req.params.filename});
+})
+
 app.post("/create",(req,res)=>{
   fs.writeFile(`./files/${req.body.title.split(" ").join("")}.txt`,req.body.details,(err)=>{
+    res.redirect("/");
+  })
+})
+
+app.post("/edit",(req,res)=>{
+ 
+  fs.rename(`./files/${req.body.oldName}`,`./files/${req.body.newName}`,(err)=>{
     res.redirect("/");
   })
 })

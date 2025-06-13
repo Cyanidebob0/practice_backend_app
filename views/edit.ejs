@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main bg-zinc-900 w-full min-h-screen text-white">
+      <div class="w-full p-4">
+        <form
+          action="/edit"
+          method="post"
+          class="flex flex-col mt-2 items-start"
+        >
+          <input
+            type="text"
+            class="bg-zinc-700 rounded-md p-2 m-2 w-full outline-none"
+            name="oldName"
+            required="true"
+            value="<%=filename%>"
+          />
+          <input
+            type="text"
+            class="bg-zinc-700 rounded-md p-2 m-2 w-full outline-none"
+            placeholder="Enter New name"
+            name="newName"
+            required="true"
+          />
+
+          <button
+            class="bg-yellow-400 rounded-md py-2 px-4 mt-2 ml-2 cursor-pointer"
+          >
+            Change name
+          </button>
+          <a href="/">Go back</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
